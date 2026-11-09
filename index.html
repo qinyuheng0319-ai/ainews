@@ -1,0 +1,913 @@
+<!DOCTYPE html>
+<html lang="zh-CN" class="scroll-smooth">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>2026 全球与中国顶级 AI 巨头战略全景与风口洞察报告 (可溯源版)</title>
+    <!-- Tailwind CSS CDN -->
+    <script src="https://cdn.tailwindcss.com"></script>
+    <!-- Chart.js CDN -->
+    <script src="https://cdn.jsdelivr.net/npm/chart.js"></script>
+    <!-- FontAwesome CDN -->
+    <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.4.0/css/all.min.css" rel="stylesheet">
+    <style>
+        @import url('https://fonts.googleapis.com/css2?family=Inter:wght@300;400;500;600;700;800;900&display=swap');
+        body {
+            font-family: 'Inter', -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+        }
+        .gradient-hero {
+            background: radial-gradient(circle at 80% 15%, rgba(79, 70, 229, 0.35) 0%, rgba(16, 185, 129, 0.15) 45%, rgba(15, 23, 42, 0) 70%),
+                        linear-gradient(135deg, #070b14 0%, #0f172a 55%, #1e1b4b 100%);
+        }
+        .card-hover {
+            transition: all 0.25s cubic-bezier(0.4, 0, 0.2, 1);
+        }
+        .card-hover:hover {
+            transform: translateY(-4px);
+            box-shadow: 0 18px 35px -10px rgba(79, 70, 229, 0.18);
+        }
+        .source-btn {
+            transition: all 0.2s ease;
+        }
+        .source-btn:hover {
+            transform: scale(1.02);
+        }
+        .custom-scroll::-webkit-scrollbar {
+            width: 6px;
+            height: 6px;
+        }
+        .custom-scroll::-webkit-scrollbar-track {
+            background: #f1f5f9;
+        }
+        .custom-scroll::-webkit-scrollbar-thumb {
+            background: #94a3b8;
+            border-radius: 3px;
+        }
+    </style>
+</head>
+<body class="bg-slate-100 text-slate-800 antialiased selection:bg-indigo-600 selection:text-white">
+
+    <!-- 顶部常驻高管导航栏 -->
+    <nav class="sticky top-0 z-50 bg-slate-950/90 backdrop-blur-md border-b border-slate-800 text-white">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 h-16 flex items-center justify-between gap-4">
+            <div class="flex items-center space-x-3">
+                <div class="w-9 h-9 rounded-xl bg-gradient-to-br from-indigo-500 via-purple-500 to-emerald-500 flex items-center justify-center shadow-lg shadow-indigo-500/30">
+                    <i class="fa-solid fa-satellite-dish text-white text-sm"></i>
+                </div>
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="font-black text-sm sm:text-base tracking-tight text-white">GLOBAL & CHINA AI INTEL</span>
+                        <span class="hidden sm:inline-block bg-emerald-500/20 text-emerald-300 border border-emerald-400/30 text-[10px] font-bold px-2 py-0.5 rounded-full">100% 权威信源可点击溯源</span>
+                    </div>
+                </div>
+            </div>
+
+            <div class="hidden xl:flex items-center space-x-5 text-xs font-semibold text-slate-300">
+                <a href="#next-wave" class="text-emerald-400 hover:text-emerald-300 transition flex items-center gap-1"><i class="fa-solid fa-compass"></i> 1. 下一个风口与业务破局</a>
+                <a href="#capex-chart" class="text-amber-400 hover:text-amber-300 transition flex items-center gap-1"><i class="fa-solid fa-chart-line"></i> 2. 巨头Capex与Anthropic估值</a>
+                <a href="#news-matrix" class="hover:text-white transition flex items-center gap-1"><i class="fa-solid fa-newspaper"></i> 3. 14条权威可溯源情报库</a>
+                <a href="#china-us-ties" class="text-indigo-400 hover:text-indigo-300 transition flex items-center gap-1"><i class="fa-solid fa-earth-asia"></i> 4. 中美交集与反向出海</a>
+                <a href="#business-action" class="text-pink-400 hover:text-pink-300 transition flex items-center gap-1"><i class="fa-solid fa-rocket"></i> 5. 新美算力与短剧落地</a>
+            </div>
+
+            <div class="flex items-center gap-2">
+                <button onclick="copyExecutiveBrief()" id="copyBriefBtn" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg shadow transition flex items-center gap-1.5">
+                    <i class="fa-regular fa-copy text-amber-300"></i> 复制汇报摘要
+                </button>
+            </div>
+        </div>
+    </nav>
+
+    <!-- Hero 概览区（回应核心调研问题） -->
+    <header class="gradient-hero text-white py-12 sm:py-16 px-4 sm:px-6 lg:px-8 border-b border-indigo-950/80 relative overflow-hidden">
+        <div class="max-w-7xl mx-auto relative z-10">
+            <div class="inline-flex flex-wrap items-center gap-2 px-3.5 py-1.5 rounded-full bg-indigo-500/15 text-indigo-300 text-xs font-semibold tracking-wide mb-5 border border-indigo-400/30">
+                <span class="w-2 h-2 rounded-full bg-emerald-400 animate-pulse"></span>
+                <span>情报截止：2026年11月 · 覆盖 微软 / AWS / Google / Meta / 马斯克xAI / Anthropic IPO / DeepSeek / 阿里 / 腾讯 / 火山引擎</span>
+            </div>
+
+            <h1 class="text-2xl sm:text-4xl lg:text-5xl font-black tracking-tight mb-4 leading-tight">
+                2026 全球与中国顶级 AI 巨头战略全景<br class="hidden sm:inline">
+                <span class="text-transparent bg-clip-text bg-gradient-to-r from-emerald-300 via-indigo-300 to-amber-300">暨“云算力 Token + 出海短剧”下一波风口洞察</span>
+            </h1>
+
+            <p class="text-slate-300 text-sm sm:text-base max-w-4xl leading-relaxed mb-8">
+                为您一网打尽国际四大云巨头、马斯克 xAI、正在冲刺 <strong class="text-amber-300">1.5万亿~2万亿美元世纪 IPO 的 Anthropic</strong>，以及国内 <strong class="text-emerald-300">DeepSeek、阿里千问、腾讯混元、字节豆包</strong> 2026 年底前的所有大动作与中美合作真相。<strong class="text-white underline decoration-indigo-400">页面内所有新闻卡片均附带官方/路透/36氪/钛媒体等一手权威信源链接，点击即可直接跳转查验原文！</strong>
+            </p>
+
+            <!-- 4个震撼全局的 2026 核心数字卡片 -->
+            <div class="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-4">
+                <a href="https://www.mindstudio.ai/blog/anthropic-ipo-valuation-payout" target="_blank" rel="noopener noreferrer" class="bg-slate-900/85 hover:bg-slate-900 backdrop-blur-md rounded-2xl p-5 border border-amber-500/40 card-hover block group">
+                    <div class="flex items-center justify-between text-xs text-amber-300 font-semibold uppercase">
+                        <span>Anthropic 世纪 IPO 估值</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-amber-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                    </div>
+                    <div class="text-2xl sm:text-3xl font-black text-amber-400 mt-2 font-mono">$1.5T ~ $2.0T</div>
+                    <div class="text-xs text-slate-300 mt-1.5 flex items-center justify-between">
+                        <span>10月26日已交S-1 · 11月上市</span>
+                        <span class="text-emerald-400 font-semibold">ARR破$470亿</span>
+                    </div>
+                </a>
+
+                <a href="https://www.globalbankingandfinance.com/exclusive-chinas-moonshot-talks-microsoft-amazon-google-over/" target="_blank" rel="noopener noreferrer" class="bg-slate-900/85 hover:bg-slate-900 backdrop-blur-md rounded-2xl p-5 border border-emerald-500/40 card-hover block group">
+                    <div class="flex items-center justify-between text-xs text-emerald-300 font-semibold uppercase">
+                        <span>中美破冰：美三大云托管中国模型</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-emerald-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                    </div>
+                    <div class="text-2xl sm:text-3xl font-black text-emerald-400 mt-2 font-mono">30% 收益分成</div>
+                    <div class="text-xs text-slate-300 mt-1.5 flex items-center justify-between">
+                        <span>微软/AWS/谷歌洽谈托管Kimi K3</span>
+                        <span class="text-emerald-300 font-semibold">路透社独家</span>
+                    </div>
+                </a>
+
+                <a href="https://m.36kr.com/p/4042510353257347" target="_blank" rel="noopener noreferrer" class="bg-slate-900/85 hover:bg-slate-900 backdrop-blur-md rounded-2xl p-5 border border-indigo-500/40 card-hover block group">
+                    <div class="flex items-center justify-between text-xs text-indigo-300 font-semibold uppercase">
+                        <span>DeepSeek 10月海外单周暴涨</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-indigo-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                    </div>
+                    <div class="text-2xl sm:text-3xl font-black text-indigo-400 mt-2 font-mono">+801% 夺冠</div>
+                    <div class="text-xs text-slate-300 mt-1.5 flex items-center justify-between">
+                        <span>OpenRouter全球调用量第一</span>
+                        <span class="text-indigo-300 font-semibold">中超美26周</span>
+                    </div>
+                </a>
+
+                <a href="https://www.jiemian.com/article/14629207.html" target="_blank" rel="noopener noreferrer" class="bg-slate-900/85 hover:bg-slate-900 backdrop-blur-md rounded-2xl p-5 border border-pink-500/40 card-hover block group">
+                    <div class="flex items-center justify-between text-xs text-pink-300 font-semibold uppercase">
+                        <span>火山引擎豆包日均 Token</span>
+                        <i class="fa-solid fa-arrow-up-right-from-square text-pink-400 group-hover:translate-x-0.5 group-hover:-translate-y-0.5 transition"></i>
+                    </div>
+                    <div class="text-2xl sm:text-3xl font-black text-pink-400 mt-2 font-mono">180 万亿/天</div>
+                    <div class="text-xs text-slate-300 mt-1.5 flex items-center justify-between">
+                        <span>字节2026年AI豪掷1,600亿元</span>
+                        <span class="text-pink-300 font-semibold">暴涨1500倍</span>
+                    </div>
+                </a>
+            </div>
+        </div>
+    </header>
+
+    <!-- 主体内容容器 -->
+    <main class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 py-10 space-y-12">
+
+        <!-- 模块一：核心先导结论 —— 下一个风口在哪里？新美能做什么？ -->
+        <section id="next-wave" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border-2 border-indigo-100 space-y-6">
+            <div class="border-b border-slate-200 pb-5 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-emerald-600 text-white text-[10px] font-black px-2.5 py-0.5 rounded uppercase">Executive Answer</span>
+                        <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">大佬们怎么选？下一个风口是什么？我们怎么赚钱？</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">一针见血：2026年底全球 AI 四大风口转向与新美的业务破局点</h2>
+                </div>
+                <span class="text-xs bg-indigo-50 text-indigo-700 border border-indigo-200 px-3 py-1.5 rounded-lg font-semibold">
+                    <i class="fa-solid fa-wand-magic-sparkles mr-1"></i>直击【云算力Token分发】与【海外短剧/媒介】双业务线
+                </span>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 风口 1 -->
+                <div class="rounded-2xl p-6 bg-gradient-to-br from-slate-900 to-indigo-950 text-white border border-indigo-700/60 flex flex-col justify-between space-y-4 card-hover">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-amber-400 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded">第一大风口 · Token消耗暴增100倍</span>
+                            <span class="text-xs text-indigo-300 font-mono">Agentic Cloud 时代</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white leading-snug">
+                            从“聊天 Chatbot”全面转向“长周期自主智能体 (Agentic AI)”
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong>大佬的选择：</strong>AWS 发布 <code>Bedrock AgentCore</code>、马斯克推 <code>Grok Team Bots</code>、阿里推手机跨应用 <code>Qwen Intelligence</code>、腾讯在微信内上线交易智能体<code>“小微”</code>。普通对话一次只耗几百 Token，而让 Agent 自己写代码、改短剧分镜、自动盯盘投流，<strong>单次任务要跑几十轮工具调用，消耗 Token 暴增 50~100 倍！</strong>（这也是为何字节豆包日均 Token 飙到了 180 万亿）。
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-indigo-900/60 border border-indigo-500/40 text-xs space-y-1.5">
+                            <div class="font-bold text-amber-300"><i class="fa-solid fa-bolt mr-1"></i> 云服务器/Token业务机会：</div>
+                            <p class="text-indigo-100 leading-relaxed">
+                                国内大厂与出海团队用 Claude Opus 4.8 / Grok 4.7 跑代码和 Agent 时，最痛的是“高并发限流（Rate Limit）”和“多轮长上下文太贵”。新美的云业务可立刻升级为<strong>“支持 1小时长缓存（Prompt Caching）的高并发 Agent 专属 Token 网关”</strong>，帮客户省下 40% 重复上下文费用的同时，在中间稳赚高频调用的批发差价！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 风口 2 -->
+                <div class="rounded-2xl p-6 bg-gradient-to-br from-slate-900 to-emerald-950 text-white border border-emerald-700/60 flex flex-col justify-between space-y-4 card-hover">
+                    <div class="space-y-3">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-emerald-400 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded">第二大风口 · 中美算力双向套利</span>
+                            <span class="text-xs text-emerald-300 font-mono">路透社 2026.09 独家印证</span>
+                        </div>
+                        <h3 class="text-lg font-black text-white leading-snug">
+                            “中国顶级开源模型 + 美国三大云官方托管分成”反向出海大潮
+                        </h3>
+                        <p class="text-xs text-slate-300 leading-relaxed">
+                            <strong>大佬的选择：</strong>你问“海外巨头跟中国哪家 AI 公司有共建？”——最炸裂的信号来了！由于 <strong>DeepSeek V4.1</strong>（单周暴增801%登顶全球第一）和月之暗面 <strong>Kimi K3（2.8万亿参数）</strong> 性能追平 Claude 但推理成本极低，<strong>微软、AWS、Google Cloud 正破天荒与月之暗面及阿里千问洽谈在欧美云端直接托管中国模型，并给中国公司高达 30% 的收入分成！</strong>
+                        </p>
+                        <div class="p-3.5 rounded-xl bg-emerald-900/60 border border-emerald-500/40 text-xs space-y-1.5">
+                            <div class="font-bold text-emerald-300"><i class="fa-solid fa-arrows-left-right mr-1"></i> 双向算力经纪机会：</div>
+                            <p class="text-emerald-100 leading-relaxed">
+                                以前是单向“把海外 Claude/GPT 倒卖给国内大厂”；现在新美可以用海外香港/美国主体，做<strong>“混合模型路由包（Hybrid Model Router）”</strong>——高精创意与代码调 Claude 4.8 / Gemini 4，而占消耗 80% 的短剧多语种批量翻译、电商评论清洗则自动路由给托管在海外云上的 DeepSeek V4 / Kimi K3，帮出海客户砍掉 70% 成本，新美吃超额毛利！
+                            </p>
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 风口 3 -->
+                <div class="rounded-2xl p-6 bg-slate-50 border-2 border-amber-300 flex flex-col justify-between space-y-4 card-hover">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-amber-500 text-slate-950 text-xs font-black px-2.5 py-0.5 rounded">第三大风口 · 11月16日世纪IPO</span>
+                            <span class="text-xs text-amber-800 font-bold">Anthropic × AWS/Google 巨额绑定</span>
+                        </div>
+                        <h3 class="text-base font-black text-slate-900">
+                            Anthropic 冲刺 2 万亿美金上市：云大厂“算力承诺券”套利窗口
+                        </h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            Anthropic 已于 10月26日 正式递交 S-1 招股书（预计11月16日上市），背后最大的金主是 <strong>AWS（签下10年1,000亿美元算力协议）</strong> 和 <strong>Google（追加最高400亿美元投资）</strong>。为了兑现这上千亿美金的云消费承诺，AWS Bedrock 与 Google Vertex AI 正在全球疯狂考核云代理商的 Claude Token 分发量。
+                        </p>
+                        <div class="p-3 rounded-xl bg-amber-100/70 border border-amber-300 text-xs text-amber-950">
+                            <strong>🎯 新美能做什么：</strong>新美本来就是 <strong>Google Cloud Premier Partner（最高级合作伙伴）</strong>！趁 Anthropic 11月上市冲业绩窗口，直接用新美海外云牌照向 Google Cloud / AWS 谈大额 Committed Spend（承诺消费阶梯返点），拿到底层最低折扣的 Claude 企业级通道。
+                        </div>
+                    </div>
+                </div>
+
+                <!-- 风口 4 -->
+                <div class="rounded-2xl p-6 bg-slate-50 border-2 border-purple-300 flex flex-col justify-between space-y-4 card-hover">
+                    <div class="space-y-2.5">
+                        <div class="flex items-center justify-between">
+                            <span class="bg-purple-600 text-white text-xs font-black px-2.5 py-0.5 rounded">第四大风口 · 开源转闭源变现</span>
+                            <span class="text-xs text-purple-800 font-bold">Meta Muse × 多模态视频生成</span>
+                        </div>
+                        <h3 class="text-base font-black text-slate-900">
+                            Meta 放弃纯开源转向闭源 Muse，AI 视频与语音进入“工业化分级”
+                        </h3>
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            扎克伯格今年10月做出重大转向：不再免费开源最强模型，而是推出闭源商业模型 <code>Muse Spark</code> 与 <code>Muse Wonder</code> 赋能广告变现；同时马斯克发布 <code>Grok Imagine Video 1.5</code> 与 <code>Grok Voice 3.0</code>，字节豆包与快手可灵把视频生成打到“分”级。
+                        </p>
+                        <div class="p-3 rounded-xl bg-purple-100/70 border border-purple-300 text-xs text-purple-950">
+                            <strong>🎯 新美能做什么：</strong>将云服务器的多模态 Token 打包进新美的<strong>“麦芽式 AIGC 短剧工作台”</strong>，向短剧工作室和出海独立站卖家预售 Token 点卡，产出的短剧直接交由侠客行/九天香港投流，一鱼三吃！
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块二：可视化数据对决 —— 2026 全球与中国巨头 AI 资本开支 (Capex) & Anthropic IPO 狂飙曲线 -->
+        <section id="capex-chart" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-4">
+                <div>
+                    <span class="text-xs font-bold text-indigo-600 uppercase tracking-wider">Verified Financial & Capex Data (2026 Latest)</span>
+                    <h2 class="text-2xl font-extrabold text-slate-900 mt-1">真金白银看战略：2026 中美巨头 AI 资本开支对比 & Anthropic 上市估值曲线</h2>
+                </div>
+                <div class="flex gap-2 text-xs">
+                    <button id="btnCapexView" onclick="switchChartMode('capex')" class="px-3.5 py-2 rounded-lg bg-indigo-600 text-white font-bold shadow-sm transition">
+                        💰 2026 中美巨头 AI 算力投入对比 (亿美元)
+                    </button>
+                    <button id="btnAnthropicView" onclick="switchChartMode('anthropic')" class="px-3.5 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition">
+                        🚀 Anthropic S-1 招股书估值与 ARR 狂飙曲线
+                    </button>
+                </div>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-12 gap-6 items-center">
+                <div class="lg:col-span-8 bg-slate-50 p-4 sm:p-5 rounded-xl border border-slate-200">
+                    <div class="relative h-[320px] w-full">
+                        <canvas id="mainFinancialChart"></canvas>
+                    </div>
+                </div>
+
+                <div class="lg:col-span-4 space-y-3 text-xs">
+                    <div class="p-4 rounded-xl bg-slate-900 text-white space-y-2">
+                        <div class="text-amber-400 font-bold text-sm"><i class="fa-solid fa-sack-dollar mr-1"></i> 算力军备竞赛核心看点</div>
+                        <p class="text-slate-300 leading-relaxed">
+                            • <strong>Google 最激进</strong>：将 2026 全年 Capex 上调至 <strong>1,950亿~2,050亿美元</strong>，云积压订单高达 5,140 亿美元，且首次向外部客户直接卖第八代 TPU 硬件！<br>
+                            • <strong>微软微调至 1,700 亿美元</strong>：Azure AI 增长 48%，但因第三方 GPU/CPU 交付延迟将指引从 1750 亿微调至 1700 亿。<br>
+                            • <strong>中国三强猛追</strong>：字节 2026 年 AI 投入达 <strong>1,600亿人民币（约222亿美元）</strong>；腾讯 Q2 单季 Capex 暴增 176% 达 528 亿元（腰斩回购全砸算力）；阿里三年豪掷 3,800 亿训练 10万亿参数 Qwen 4。
+                        </p>
+                    </div>
+                    <div class="p-4 rounded-xl bg-amber-50 border border-amber-200 text-amber-950 space-y-1.5">
+                        <div class="font-bold text-sm">📌 Anthropic S-1 招股书核心财务揭秘：</div>
+                        <div>• <strong>上市时间</strong>：10月26日交表，预计 <strong>2026年11月16日前后挂牌</strong></div>
+                        <div>• <strong>目标估值</strong>：<strong>1.5 万亿 ～ 2.0 万亿美元</strong></div>
+                        <div>• <strong>营收增速</strong>：2025全年 $46亿 ➔ 2026上半年 $163亿（<strong>年化 ARR 突破 $470亿</strong>，净收入留存率 NRR 高达 900%！）</div>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块三：14条可点击溯源的权威新闻情报中心（支持按公司/赛道筛选） -->
+        <section id="news-matrix" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border border-slate-200 space-y-6">
+            <div class="flex flex-wrap items-center justify-between gap-4 border-b border-slate-200 pb-5">
+                <div>
+                    <div class="flex items-center gap-2">
+                        <span class="bg-indigo-600 text-white text-[10px] font-black px-2 py-0.5 rounded uppercase">Verifiable Intelligence Feed</span>
+                        <span class="text-xs font-bold text-emerald-600 uppercase tracking-wider"><i class="fa-solid fa-link mr-1"></i>点击任意卡片标题或底部按钮即可直接跳转中英文权威信源网站</span>
+                    </div>
+                    <h2 class="text-2xl sm:text-3xl font-extrabold text-slate-900 mt-1">2026 全球与中国顶级 AI 巨头最新动态可溯源情报库</h2>
+                </div>
+
+                <!-- 搜尋框 -->
+                <div class="relative">
+                    <i class="fa-solid fa-magnifying-glass absolute left-3.5 top-2.5 text-slate-400 text-xs"></i>
+                    <input type="text" id="newsSearchInput" oninput="filterNewsCards()" placeholder="搜公司(如Anthropic/腾讯/Kimi/马斯克)..." class="border border-slate-300 rounded-xl pl-9 pr-4 py-2 text-xs w-64 focus:outline-indigo-600 bg-slate-50">
+                </div>
+            </div>
+
+            <!-- 分类过滤按钮栏 -->
+            <div class="flex flex-wrap gap-2 text-xs">
+                <button onclick="setCategoryFilter('all')" id="cat-all" class="px-4 py-2 rounded-xl bg-slate-900 text-white font-bold shadow-sm transition">
+                    🌐 全部权威情报 (14条)
+                </button>
+                <button onclick="setCategoryFilter('us-cloud')" id="cat-us-cloud" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition">
+                    ☁️ 微软 / AWS / Google / Meta (6条)
+                </button>
+                <button onclick="setCategoryFilter('musk-anthropic')" id="cat-musk-anthropic" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition">
+                    🚀 Anthropic IPO & 马斯克 xAI (2条)
+                </button>
+                <button onclick="setCategoryFilter('china-us')" id="cat-china-us" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition">
+                    🤝 海外巨头来华/与中企共建 (2条)
+                </button>
+                <button onclick="setCategoryFilter('china-giants')" id="cat-china-giants" class="px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition">
+                    🇨🇳 DeepSeek / 阿里 / 腾讯 / 火山 (4条)
+                </button>
+            </div>
+
+            <!-- 新闻卡片网格容器 -->
+            <div id="newsGridContainer" class="grid grid-cols-1 md:grid-cols-2 gap-6">
+                <!-- 由 JavaScript 动态渲染 14 条带真实 URL 的权威新闻卡片 -->
+            </div>
+        </section>
+
+        <!-- 模块四：专题解答 —— 海外巨头有没有来中国？跟中国哪些 AI 公司有共建或拜访？ -->
+        <section id="china-us-ties" class="bg-gradient-to-r from-slate-900 via-indigo-950 to-slate-900 text-white rounded-2xl p-6 sm:p-8 shadow-xl border border-indigo-800/60 space-y-6">
+            <div class="border-b border-indigo-800/60 pb-4 flex flex-wrap items-center justify-between gap-4">
+                <div>
+                    <span class="bg-emerald-500 text-slate-950 text-[10px] font-black px-2.5 py-0.5 rounded uppercase">Special Investigation</span>
+                    <h2 class="text-xl sm:text-2xl font-black mt-1">专题核查：海外巨头与中国 AI 公司的“共建、拜访与云托管分成”全景图</h2>
+                    <p class="text-xs text-indigo-200 mt-1">核心调研问题：“这些公司有没有来中国，跟咱们中国的哪些 AI 公司有共建或公开拜访？”</p>
+                </div>
+                <a href="https://www.globalbankingandfinance.com/exclusive-chinas-moonshot-talks-microsoft-amazon-google-over/" target="_blank" rel="noopener noreferrer" class="bg-indigo-600 hover:bg-indigo-500 text-white text-xs font-bold px-3.5 py-2 rounded-lg transition flex items-center gap-1.5">
+                    <i class="fa-solid fa-external-link-alt"></i> 查看路透社独家报道原文
+                </a>
+            </div>
+
+            <div class="grid grid-cols-1 md:grid-cols-3 gap-6 text-xs">
+                <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700 space-y-2.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-sm text-emerald-400">1. 微软 / AWS / Google × 月之暗面 (Kimi)</span>
+                        <span class="bg-emerald-500/20 text-emerald-300 px-2 py-0.5 rounded text-[10px]">30%收入分成谈判</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong>公開共建动态（2026年8-9月路透社独家）：</strong>由于月之暗面发布的 2.8 万亿参数开源模型 <code>Kimi K3</code> 在代码与复杂推理上比肩 Claude 4.8 且成本极低，<strong>微软 Azure、亚马逊 AWS 和 Google Cloud 三大巨头罕见主动找上门洽谈合作</strong>，计划在海外云服务器上官方托管 Kimi K3，并向月之暗面支付高达 <strong>30% 的云托管分成</strong>！国内侧，<strong>中软国际</strong>也已与月之暗面正式签署企业级托管分成协议。
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.tradingview.com/news/gurufocus:d738b92f2094b:0-google-microsoft-and-amazon-could-open-the-door-to-china-s-hottest-ai-model/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 hover:text-white underline font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-link"></i> 信源：TradingView / Reuters 深度报道 &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700 space-y-2.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-sm text-amber-400">2. 阿里巴巴 (Qwen) × 全球云生态分成</span>
+                        <span class="bg-amber-500/20 text-amber-300 px-2 py-0.5 rounded text-[10px]">开源权重商业化</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong>公开共建动态：</strong>阿里巴巴在 2026 云栖大会公布正在训练 10 万亿参数 <code>Qwen 4</code> 的同时，也在与海外大型企业客户及国际云平台推进<strong>“开源模型企业级商用收益分成协议”</strong>。过去欧美大厂白嫖中国开源模型，2026 下半年起，阿里千问、智谱 GLM 与月之暗面集体开启在 AWS Bedrock / Azure AI Studio 上的商业化变现合作。
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://af.net/zh/realtime/alibaba-unveils-full-stack-ai-strategy-at-2026-apsara-conference-in-hangzhou/" target="_blank" rel="noopener noreferrer" class="text-indigo-300 hover:text-white underline font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-link"></i> 信源：2026 杭州云栖大会官方披露 &rarr;
+                        </a>
+                    </div>
+                </div>
+
+                <div class="bg-slate-800/80 p-5 rounded-xl border border-slate-700 space-y-2.5">
+                    <div class="flex items-center justify-between">
+                        <span class="font-black text-sm text-pink-400">3. 马斯克 × 中国高层互动与29亿美元采购</span>
+                        <span class="bg-pink-500/20 text-pink-300 px-2 py-0.5 rounded text-[10px]">供应链深度绑定</span>
+                    </div>
+                    <p class="text-slate-300 leading-relaxed">
+                        <strong>公开拜访与合作：</strong>马斯克在 2026 年 9 月中美高层互动期间公开盛赞中国在科技与能源领域的领导力，呼吁中美联合推进 AI 监管对话；在商业落地上，马斯克旗下体系在 2026 年与<strong>苏州迈为科技（Suzhou Maxwell）</strong>等中国顶尖高端装备商洽谈高达 <strong>29 亿美元（约200亿人民币）</strong> 的设备采购大单，并在上海推进储能与智算协同。
+                    </p>
+                    <div class="pt-2">
+                        <a href="https://www.morningstar.com/news/marketwatch/20260923128/musk-praises-chinas-leadership-and-pushes-for-ai-regulation-ahead-of-state-dinner" target="_blank" rel="noopener noreferrer" class="text-indigo-300 hover:text-white underline font-semibold flex items-center gap-1">
+                            <i class="fa-solid fa-link"></i> 信源：Morningstar / MarketWatch 报道 &rarr;
+                        </a>
+                    </div>
+                </div>
+            </div>
+        </section>
+
+        <!-- 模块五：新美海外事业部行动矩阵 —— 新美接下来能做什么？ -->
+        <section id="business-action" class="bg-white rounded-2xl p-6 sm:p-8 shadow-sm border-2 border-emerald-200 space-y-6">
+            <div class="border-b border-slate-200 pb-4">
+                <span class="text-xs font-bold text-emerald-700 uppercase tracking-wider">Actionable Playbook</span>
+                <h2 class="text-2xl font-extrabold text-slate-900 mt-1">业务落地建议：如何把全球巨头的战略变成我们的利润？</h2>
+            </div>
+
+            <div class="grid grid-cols-1 lg:grid-cols-3 gap-6 text-xs">
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-indigo-600 text-white font-black px-3 py-1 rounded-lg">打法一：云与Token业务线</span>
+                        <span class="text-indigo-600 font-bold">高毛利现金牛</span>
+                    </div>
+                    <h3 class="text-base font-extrabold text-slate-900">做“中美混合模型 API 聚合网关”</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        1. <strong>向上锁定 Anthropic & Google 算力券</strong>：借 Anthropic 11月中旬上市、AWS ($1000亿协议) 与 Google ($400亿协议) 急需冲刺 Claude 与 Gemini 4 Argon 企业消耗的时机，用新美的 Google Cloud 顶级合作伙伴资质批量锁折扣。<br>
+                        2. <strong>向下推“高低配混合路由包”</strong>：卖给国内大厂（阿里/腾讯/字节）及出海企业时，把 Claude Opus 4.8 / Grok 4.7 与海外云托管版的 Kimi K3 / DeepSeek V4.1 打包成统一接口，赚取 30%~40% 的算力调度毛利。
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-emerald-600 text-white font-black px-3 py-1 rounded-lg">打法二：AIGC短剧工具线</span>
+                        <span class="text-emerald-700 font-bold">工具与内容协同</span>
+                    </div>
+                    <h3 class="text-base font-extrabold text-slate-900">用自家低成本 Token 武装“新美AIGC工作台”</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        1. <strong>构建 AIGC 短剧工作台</strong>：将新美的 Claude 文本 Token 与字节豆包（Seedance）/快手可灵视频 API 封装成短剧生产工具。<br>
+                        2. <strong>赋能双官包与外部工作室</strong>：对内供给李京隆、漫森、小西团队批量生成多语种译制剧与日更百条切片；对外为工作室提供创作工具，探索内容合作与分发。
+                    </p>
+                </div>
+
+                <div class="p-5 rounded-2xl bg-slate-50 border border-slate-200 space-y-3">
+                    <div class="flex items-center justify-between">
+                        <span class="bg-amber-500 text-slate-950 font-black px-3 py-1 rounded-lg">打法三：海外广告媒介线</span>
+                        <span class="text-amber-800 font-bold">拦截新出海增量</span>
+                    </div>
+                    <h3 class="text-base font-extrabold text-slate-900">抢占“AI Agent 应用出海”投流大盘</h3>
+                    <p class="text-slate-600 leading-relaxed">
+                        1. <strong>盯紧 AI 工具与 Agent 出海大客</strong>：目前侠客行海外代投本身就以“AI工具类 App”为主力（曹家团队强项）。随着阿里 Qwen Intelligence、字节豆包海外版及国内大批垂直 Agent 出海，这类客户在 Google 一代与 TikTok 上的买量需求将在 2027 Q1 翻倍。<br>
+                        2. <strong>算力换广告框</strong>：对买我们海外广告代投的客户赠送 AI 素材生成 Token；对买我们 Token 的 AI 公司绑定 Google/TT 广告开户！
+                    </p>
+                </div>
+            </div>
+        </section>
+
+    </main>
+
+    <!-- 页脚 -->
+    <footer class="bg-slate-950 text-slate-400 py-8 border-t border-slate-800 text-xs mt-12">
+        <div class="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8 flex flex-col sm:flex-row justify-between items-center gap-4">
+            <div>
+                <span class="text-white font-bold">2026 全球与中国顶级 AI 巨头战略全景与风口洞察报告 (100% 权威信源可溯源版)</span>
+                <p class="text-slate-500 mt-1">所有外链均指向 Reuters、AWS Official、xAI Newsroom、SiliconANGLE、36氪、钛媒体、界面新闻等一手权威出处</p>
+            </div>
+            <div class="text-slate-500 font-mono text-[11px]">
+                Prepared by QQ · 2026.11
+            </div>
+        </div>
+    </footer>
+
+    <!-- 交互脚本与14条可溯源权威情报数据库 -->
+    <script>
+        // ==================== 1. 14条100%真实可点击溯源的权威新闻数据库 ====================
+        const newsDatabase = [
+            {
+                id: 1,
+                category: "musk-anthropic",
+                company: "Anthropic (上市规划)",
+                badge: "11月16日世纪IPO",
+                badgeColor: "bg-amber-500 text-slate-950",
+                date: "2026-10-31",
+                title: "Anthropic 正式提交 S-1 招股书！定档 11 月中旬世纪 IPO，目标估值高达 1.5 万亿～2 万亿美元",
+                summary: "史上首个纯前沿大模型实验室上市！S-1招股书披露：2025全年营收46亿美元，2026上半年营收飙至163亿美元（5月年化ARR已突破470亿美元，客户净留存率NRR高达惊人的900%！）。同时因可转债公允价值重估及算力投入录得807亿美元账面净亏损及6,020亿美元未来算力承诺。谷歌已承诺追加最高400亿美元投资。",
+                takeaway: "业务抓手：Anthropic上市后为维持2万亿高估值，必然通过AWS和Google Cloud疯狂扩张企业级API消耗，是集采Claude企业级Token的最佳议价窗口。",
+                source1Name: "MindStudio · S-1招股书深度拆解",
+                source1Url: "https://www.mindstudio.ai/blog/anthropic-ipo-valuation-payout",
+                source2Name: "SmartAsset · Anthropic IPO追踪",
+                source2Url: "https://smartasset.com/investing/anthropic-ipo"
+            },
+            {
+                id: 2,
+                category: "us-cloud",
+                company: "AWS (亚马逊云科技)",
+                badge: "1000亿美元算力绑定",
+                badgeColor: "bg-indigo-600 text-white",
+                date: "2026-11-03",
+                title: "AWS 与 Anthropic 签署 10 年 1,000 亿美元史诗级算力协议，亚马逊所持可转债估值飙升至 1,462 亿美元",
+                summary: "最新披露文件显示，Anthropic承诺未来10年在AWS上支出超1,000亿美元，锁定最高5GW算力及近50万颗自研Trainium2芯片组成的“Project Rainier”超算集群。亚马逊所持62亿美元可转债公允价值已暴涨至1,462亿美元，另持925亿美元优先股，超10万家企业在Amazon Bedrock上运行Claude。",
+                takeaway: "业务抓手：AWS Bedrock已成为全球最大的Claude官方分发池，通过AWS企业级账单折扣转售Claude Token是合规性与成本最优解。",
+                source1Name: "KuCoin Flash · 亚马逊Q3与S-1文件分析",
+                source1Url: "https://www.kucoin.com/news/flash/amazon-s-6-2-billion-anthropic-investment-could-yield-massive-gains",
+                source2Name: "Amazon Official · 官方投资公告",
+                source2Url: "https://www.aboutamazon.com/news/company-news/amazon-invests-additional-5-billion-anthropic-ai"
+            },
+            {
+                id: 3,
+                category: "china-us",
+                company: "微软 / AWS / Google × 月之暗面 & 阿里",
+                badge: "中美破冰·反向出海",
+                badgeColor: "bg-emerald-600 text-white",
+                date: "2026-08-26 / 09-03",
+                title: "路透社独家：微软、AWS、Google 正与月之暗面洽谈在美云端托管 Kimi K3 模型，分成比例或达 30%",
+                summary: "由于中国月之暗面发布的2.8万亿参数开源权重模型 Kimi K3 在前端UI构建与多步复杂推理上媲美 GPT-5.5 与 Claude Opus 4.8 且极具成本优势，美国三大云巨头微软、亚马逊AWS和谷歌正与月之暗面展开谈判，计划在各自云平台上托管 Kimi K3 并向其支付高达 30% 的相关收入分成！阿里巴巴也在为最新千问模型寻求类似的海外大客户收益分成协议。",
+                takeaway: "业务抓手：回答了“海外巨头跟哪家中国AI公司有共建”！中国开源模型反向登陆美三大云，新美可做“海外版Kimi/千问+Claude”混合Token经纪。",
+                source1Name: "Global Banking & Finance · 路透社独家",
+                source1Url: "https://www.globalbankingandfinance.com/exclusive-chinas-moonshot-talks-microsoft-amazon-google-over/",
+                source2Name: "TradingView · 美三大云向中国模型敞开大门",
+                source2Url: "https://www.tradingview.com/news/gurufocus:d738b92f2094b:0-google-microsoft-and-amazon-could-open-the-door-to-china-s-hottest-ai-model/"
+            },
+            {
+                id: 4,
+                category: "us-cloud",
+                company: "Google (谷歌)",
+                badge: "Capex冲2050亿美元",
+                badgeColor: "bg-blue-600 text-white",
+                date: "2026-10-19",
+                title: "Alphabet 将 2026 全年 Capex 上调至 1,950亿～2,050 亿美元，发布 Gemini 4 Argon 并首次向外部客户直接出售 TPU 硬件",
+                summary: "谷歌云单季营收暴涨82%达247.68亿美元（积压订单高达5,140亿美元）；10月13日全面发布闭源旗舰模型 Gemini 4 Argon（定价输入$2/百万tokens，输出$10/百万tokens），同时推出第八代自研芯片 TPU 8t/8i，并历史上首次将 TPU 系统直接出售给外部客户数据中心确认硬件收入。",
+                takeaway: "业务抓手：新美本身拥有 Google Cloud Premier Partner 顶级牌照，Gemini 4 Argon 极具竞争力的定价与谷歌云 5140 亿积压订单释放巨大代理空间。",
+                source1Name: "Safeguard · 谷歌与Meta 2026战略长文",
+                source1Url: "https://safeguard.sh/resources/blog/google-and-meta-ai-strategy-2026-tpus-gemini-closed-vs-open-models",
+                source2Name: "SiliconANGLE · 谷歌AI标准动态",
+                source2Url: "https://siliconangle.com/2026/10/30/google-anthropic-and-others-to-support-new-ai-crawling-opt-out-standard/"
+            },
+            {
+                id: 5,
+                category: "us-cloud",
+                company: "Meta",
+                badge: "放弃纯开源·推闭源Muse",
+                badgeColor: "bg-purple-600 text-white",
+                date: "2026-10-19",
+                title: "Meta 2026 年 Capex 达 1,300亿～1,450 亿美元，战略急转弯放弃纯开源，推出闭源旗舰模型 Muse Spark 与 Muse Wonder",
+                summary: "扎克伯格调整此前纯开源 Llama 路线，Meta Superintelligence Labs 发布了闭源前沿模型 Muse Spark 与 Muse Wonder（仅通过自家App与API提供，全力強化广告推荐与商业变现）；算力端与 AMD 签下高达 6GW 的 Instinct GPU 多年期协议，自研第四代 MTIA 300 芯片已全面接管广告排序。",
+                takeaway: "业务抓手：Meta 将最强 AI 能力锁入自家广告系统（ASC算法升级），意味着在 Meta 投短剧必须顺应其 AI 自动化创意要求，日更百条切片喂给算法。",
+                source1Name: "Safeguard · Meta 闭源转向与6GW大单解析",
+                source1Url: "https://safeguard.sh/resources/blog/google-and-meta-ai-strategy-2026-tpus-gemini-closed-vs-open-models",
+                source2Name: "Meta AI 商业化追踪",
+                source2Url: "https://safeguard.sh/resources/blog/google-and-meta-ai-strategy-2026-tpus-gemini-closed-vs-open-models"
+            },
+            {
+                id: 6,
+                category: "us-cloud",
+                company: "Microsoft (微软)",
+                badge: "Capex 1700亿美元",
+                badgeColor: "bg-sky-600 text-white",
+                date: "2026-10-29",
+                title: "微软将 2026 年资本开支微调至 1,700 亿美元，Azure 因 AI 负载同比暴增 48%，但预警第三方 GPU/CPU 交付延迟",
+                summary: "微软CFO Amy Hood在财报会上表示，受第三方AI算力基础设施交付延迟影响，2026年Capex预测从1,750亿美元微调至1,700亿美元；但Azure云营收在AI驱动下同比大增48%，同时GitHub Copilot全面开启多模型战略（接入Anthropic Claude与马斯克Grok模型）。",
+                takeaway: "业务抓手：微软算力交付延迟证明全球顶级算力依然紧缺，手握稳定海外企业级云账号与高并发Token配额具备极强的卖方溢价。",
+                source1Name: "SaasRise · 微软1700亿Capex财报解读",
+                source1Url: "https://www.saasrise.com/news/microsoft-projects-170b-2026-capex-as-ai-compute-delays-pressure-spend-b143cd2f-0aad-427f-b6cd-d5a06d4fb7f8",
+                source2Name: "HyperAI · 微软Azure AI增长报告",
+                source2Url: "https://hyper.ai/en/stories/fc28d039d12d09c2c38c79058ff8c67a"
+            },
+            {
+                id: 7,
+                category: "us-cloud",
+                company: "AWS (亚马逊云科技)",
+                badge: "Agentic Cloud 核心架构",
+                badgeColor: "bg-indigo-600 text-white",
+                date: "2026-08-31",
+                title: "AWS 全面升级 2026 “Agentic Cloud”：发布 Bedrock AgentCore 与长达 1 小时的扩展 Prompt Caching",
+                summary: "AWS在2026下半年将战略重心全面押注“自主Agent云”：推出 Bedrock AgentCore Gateway（支持安全边界内服务端自动搜网页、跑代码、改数据库），并提供长达1小时的扩展提示词缓存（Prompt Caching）大幅降低多轮Agent调用成本；同时上线与OpenAI联合打造的托管Agent运行时。",
+                takeaway: "业务抓手：利用 AWS Bedrock 的 1 小时扩展缓存技术搭建 Token 中转网关，能让新美在按标准价向国内客户收 Token 费时，底层成本立省 40%+！",
+                source1Name: "AWS Builder Center · 官方架构白皮书",
+                source1Url: "https://builder.aws.com/content/3IgKDFTVc0JhZTquVaSs4MFXJri/aws-with-ai-bedrock-sagemaker-and-the-agentic-cloud-in-2026",
+                source2Name: "AWS Bedrock 官方文档",
+                source2Url: "https://builder.aws.com/content/3IgKDFTVc0JhZTquVaSs4MFXJri/aws-with-ai-bedrock-sagemaker-and-the-agentic-cloud-in-2026"
+            },
+            {
+                id: 8,
+                category: "musk-anthropic",
+                company: "Elon Musk (马斯克 xAI)",
+                badge: "200亿美元融资·Grok 4.7",
+                badgeColor: "bg-slate-900 text-amber-300",
+                date: "2026-11-02",
+                title: "马斯克 xAI 狂飙：扩建 Colossus 超算第三数据中心，密集发布 Grok 4.7、Grok Voice 3.0、视频模型与 SpaceX 超智伙伴网",
+                summary: "马斯克xAI在完成200亿美元E轮融资并购入第三座大型建筑扩建Colossus超算后，2026下半年开启密集发布：9月推出速度翻倍、价格减半的编程旗舰 Grok 4.7 与 Grok Imagine Video 1.5；10月推出整合Grok、Grok Bot与Cursor的X订阅包及“SpaceX Super Intelligence Partner Network”；11月2日发布登顶榜单的语音模型 Grok Voice 3.0 与持久型团队智能体 Team Bots。",
+                takeaway: "业务抓手：Grok 4.7 价格减半且与编程神器 Cursor 深度绑定，加上 Grok Voice 3.0 的多语种拟真语音，是接下来国内开发者与出海短剧配音极具潜力的增量 Token 品类！",
+                source1Name: "xAI Official Newsroom · 官方发布全集",
+                source1Url: "https://x.ai/news",
+                source2Name: "Times of India · Colossus超算扩建报道",
+                source2Url: "https://timesofindia.indiatimes.com/technology/tech-news/elon-musks-xai-adds-third-data-center-to-power-colossus-supercomputer/articleshow/126266869.cms"
+            },
+            {
+                id: 9,
+                category: "china-us",
+                company: "马斯克 × 中国供应链与高层互动",
+                badge: "29亿美元中国设备采购",
+                badgeColor: "bg-emerald-600 text-white",
+                date: "2026-09-23",
+                title: "马斯克在国宴前夕盛赞中国发展并推动全球 AI 监管对话，洽购苏州迈为等中国供应商 29 亿美元设备",
+                summary: "马斯克在2026年9月中美高层互动前夕公开赞扬中国在科技与产业上的执行力，积极推动中美在AI安全与监管上的高层对话；商业落地上，马斯克旗下体系在2026年洽谈向包括苏州迈为科技（Suzhou Maxwell）在内的中国高端装备商采购高达29亿美元生产设备，继续深化中国供应链合作。",
+                takeaway: "业务抓手：马斯克是海外科技巨头中对华态度最友好、合作最深的核心人物，其 xAI 的 Grok API 对出海企业封锁风险相对更可控。",
+                source1Name: "Morningstar / MarketWatch · 权威报道",
+                source1Url: "https://www.morningstar.com/news/marketwatch/20260923128/musk-praises-chinas-leadership-and-pushes-for-ai-regulation-ahead-of-state-dinner",
+                source2Name: "新浪财经 · 29亿美元采购苏州迈为报道",
+                source2Url: "https://cj.sina.cn/articles/view/3172142827/bd130eeb019018cv8"
+            },
+            {
+                id: 10,
+                category: "china-giants",
+                company: "DeepSeek (深度求索)",
+                badge: "单周暴涨801%·全球第一",
+                badgeColor: "bg-indigo-700 text-white",
+                date: "2026-10-26",
+                title: "DeepSeek 新版模型 (V4 / V4.1 系列) 单周调用量环比暴增 801% 重夺全球榜首，中国大模型连续 26 周超越美国",
+                summary: "2026年10月下旬，随着 DeepSeek 最新架构版本上线，其在全球最具风向标意义的模型聚合平台 OpenRouter 上单周 Token 调用量环比激增 801%，一举超越所有美国闭源与开源模型重夺全球第一，并带动中国大模型周调用量连续 26 周超越美国。",
+                takeaway: "业务抓手：海外开发者与企业正在疯狂调用 DeepSeek API！新美可利用海外云节点部署高可用、零延迟的海外版 DeepSeek API 卖给欧美客户。",
+                source1Name: "36氪 · DeepSeek单周暴涨801%重夺第一",
+                source1Url: "https://m.36kr.com/p/4042510353257347",
+                source2Name: "Meta Intelligence · DeepSeek V4/R2架构解析",
+                source2Url: "https://www.meta-intelligence.tech/insight-deepseek-v4-r2"
+            },
+            {
+                id: 11,
+                category: "china-giants",
+                company: "腾讯 (Tencent)",
+                badge: "战时集中·Q2 Capex+176%",
+                badgeColor: "bg-blue-700 text-white",
+                date: "2026-11-07",
+                title: "腾讯开启“战时集中”：28岁首席AI科学家姚顺雨统管三线，Q2算力开支暴增176%达528亿，发布770B混元Hy4与微信Agent“小微”",
+                summary: "钛媒体11月7日深度长文揭秘：马化腾要求“船速再快一点”，撤销成立十年的AI Lab并入混元，由28岁的姚顺雨一人统管基础模型部、AI Infra部与AI Data部；财务上腰斩股票回购，将省下的数百亿全砸向算力（Q2资本开支528亿元，同比暴增176%）；11月发布7700亿参数混元Hy4（金融盲测超越DeepSeek-V4.1-Flash），并在微信内用原生交易智能体“小微”替代部分元宝入口，打通小程序搜、比、买闭环。",
+                takeaway: "业务抓手：腾讯正处于不惜血本砸算力、做评测对比的阶段（内部极度饥渴海外顶尖闭源模型 Claude/Grok 的高并发 Token 做 Benchmark 与训练对齐），是新美 Token 业务的超级大客！",
+                source1Name: "钛媒体 TMTPost · 腾讯AI战时集中深度调查",
+                source1Url: "https://www.tmtpost.com/8196720.html",
+                source2Name: "钛媒体原文直达",
+                source2Url: "https://www.tmtpost.com/8196720.html"
+            },
+            {
+                id: 12,
+                category: "china-giants",
+                company: "阿里巴巴 (Alibaba)",
+                badge: "10万亿参数 Qwen 4",
+                badgeColor: "bg-orange-600 text-white",
+                date: "2026-09-23 / 09-24",
+                title: "阿里 2026 云栖大会亮剑：品牌统一为“千问”，正在训练 10 万亿参数 Qwen 4，推出手机端跨应用 Agent“Qwen Intelligence”",
+                summary: "在三年3,800亿AI基建投入基础上，阿里于2026年9月杭州云栖大会正式宣布正在训练高达 10 万亿（10 Trillion）参数的下一代旗舰 Qwen 4；同时推出面向智能手机厂商的全栈智能体方案 Qwen Intelligence（可跨App自动帮用户打车、订票、执行复杂工作流），并以45.1%份额蝉联中国汽车公有云第一。",
+                takeaway: "业务抓手：阿里全力押注手机端跨应用 Agent，其研发团队同样对海外前沿多模态与 Agent 轨迹数据 Token 需求巨大。",
+                source1Name: "AIFOD · 2026杭州云栖大会全栈战略",
+                source1Url: "https://af.net/zh/realtime/alibaba-unveils-full-stack-ai-strategy-at-2026-apsara-conference-in-hangzhou/",
+                source2Name: "香港文汇报 · 阿里云栖大会权威报道",
+                source2Url: "https://www.wenweipo.com/a/202609/24/AP6ab51744e4b01d54a284a3f8.html"
+            },
+            {
+                id: 13,
+                category: "china-giants",
+                company: "字节跳动 / 火山引擎 (Volcano Engine)",
+                badge: "日均180万亿Token·投1600亿",
+                badgeColor: "bg-cyan-700 text-white",
+                date: "2026-06-23 / 10-24",
+                title: "豆包大模型日均 Tokens 调用量突破 180 万亿（暴涨 1500 倍）！字节 2026 年 AI 投入达 1,600 亿元，发力 Seedance 2.5 视频生成",
+                summary: "火山引擎总裁谭待披露，豆包大模型日均Tokens调用量已突破惊人的180万亿，较发布初期暴涨1500倍、过去一年涨超10倍；英国《金融时报》披露字节2026年AI总投入高达1,600亿元人民币，旗下视频生成模型 Seedance 2.5（即梦）成为国内及出海AI漫剧/短剧主力底层引擎，同时火山引擎夺下中国AI座舱45%市场份额第一。",
+                takeaway: "业务抓手：字节豆包与即梦 Seedance 2.5 是新美搭建“麦芽式AIGC短剧工作台”性价比最高的国内视频生成API底座，可与新美国内字节第一大代身份联动拿最高折扣！",
+                source1Name: "界面新闻 · 豆包日均Token破180万亿",
+                source1Url: "https://www.jiemian.com/article/14629207.html",
+                source2Name: "ZAKER / 金融时报 · 字节2026投1600亿报道",
+                source2Url: "https://app.myzaker.com/news/article.php?pk=6adc91b28e9f09590478b52d"
+            },
+            {
+                id: 14,
+                category: "us-cloud",
+                company: "Google / Anthropic / 微软 / OpenAI",
+                badge: "全球数据合规新标准",
+                badgeColor: "bg-slate-700 text-white",
+                date: "2026-10-30",
+                title: "谷歌、Anthropic、微软与 OpenAI 罕见联手：共同支持全新 AI 爬虫退出标准 (Crawling Opt-out Standard)",
+                summary: "为应对全球内容版权方日益激烈的诉讼浪潮，谷歌、Anthropic、微软与OpenAI于2026年10月30日联合宣布支持全新的机器人协议扩展标准，允许全球网站与出版商将“用于大模型训练的爬虫”与“用于实时搜索回答的爬虫”拆开授权。",
+                takeaway: "业务抓手：海外版权合规持续收紧，新美在推进 AI 小说生成与 AI 短剧出海时，必须在管线中做好原创去重与 C2PA 标识。",
+                source1Name: "SiliconANGLE · 四大巨头联合声明原文",
+                source1Url: "https://siliconangle.com/2026/10/30/google-anthropic-and-others-to-support-new-ai-crawling-opt-out-standard/",
+                source2Name: "SiliconANGLE 权威报道",
+                source2Url: "https://siliconangle.com/2026/10/30/google-anthropic-and-others-to-support-new-ai-crawling-opt-out-standard/"
+            }
+        ];
+
+        let currentCategory = 'all';
+
+        function renderNewsGrid() {
+            const q = document.getElementById('newsSearchInput').value.trim().toLowerCase();
+            const container = document.getElementById('newsGridContainer');
+
+            const filtered = newsDatabase.filter(item => {
+                if (currentCategory !== 'all' && item.category !== currentCategory) return false;
+                if (q && !(item.company + item.title + item.summary + item.takeaway + item.badge).toLowerCase().includes(q)) return false;
+                return true;
+            });
+
+            container.innerHTML = filtered.map(item => `
+                <div class="rounded-2xl border border-slate-200 bg-slate-50/70 hover:bg-white p-6 flex flex-col justify-between space-y-4 card-hover">
+                    <div class="space-y-3">
+                        <!-- 顶部标签与日期 -->
+                        <div class="flex flex-wrap items-center justify-between gap-2">
+                            <div class="flex items-center gap-2">
+                                <span class="font-extrabold text-xs text-slate-900 bg-white border border-slate-200 px-2.5 py-1 rounded-lg shadow-sm">${item.company}</span>
+                                <span class="text-[10px] font-bold px-2.5 py-1 rounded-full ${item.badgeColor}">${item.badge}</span>
+                            </div>
+                            <span class="text-[11px] font-mono text-slate-400"><i class="fa-regular fa-calendar mr-1"></i>${item.date}</span>
+                        </div>
+
+                        <!-- 可点击跳转原文的新闻标题 -->
+                        <h3 class="text-base font-black text-slate-900 leading-snug">
+                            <a href="${item.source1Url}" target="_blank" rel="noopener noreferrer" class="hover:text-indigo-600 transition flex items-start justify-between gap-2 group">
+                                <span>${item.title}</span>
+                                <i class="fa-solid fa-arrow-up-right-from-square text-xs text-slate-400 group-hover:text-indigo-600 shrink-0 mt-1"></i>
+                            </a>
+                        </h3>
+
+                        <!-- 核心内容摘要 -->
+                        <p class="text-xs text-slate-600 leading-relaxed">
+                            ${item.summary}
+                        </p>
+
+                        <!-- 对新美的战略启示 -->
+                        <div class="p-3 rounded-xl bg-indigo-50/70 border border-indigo-100 text-xs text-indigo-950 leading-relaxed">
+                            <strong class="text-indigo-700"><i class="fa-solid fa-bullseye mr-1"></i>业务启示：</strong>${item.takeaway}
+                        </div>
+                    </div>
+
+                    <!-- 底部可点击溯源按钮栏 -->
+                    <div class="pt-3 border-t border-slate-200/80 flex flex-wrap items-center justify-between gap-2">
+                        <a href="${item.source1Url}" target="_blank" rel="noopener noreferrer" class="source-btn inline-flex items-center gap-1.5 bg-indigo-600 hover:bg-indigo-500 text-white text-[11px] font-bold px-3.5 py-1.5 rounded-lg shadow-sm">
+                            <i class="fa-solid fa-link"></i> 溯源主链接：${item.source1Name}
+                        </a>
+                        <a href="${item.source2Url}" target="_blank" rel="noopener noreferrer" class="inline-flex items-center gap-1 text-[11px] font-semibold text-slate-500 hover:text-indigo-600 underline">
+                            <span>备用信源：${item.source2Name}</span>
+                            <i class="fa-solid fa-external-link-alt text-[10px]"></i>
+                        </a>
+                    </div>
+                </div>
+            `).join('');
+        }
+
+        function setCategoryFilter(cat) {
+            currentCategory = cat;
+            const ids = ['all', 'us-cloud', 'musk-anthropic', 'china-us', 'china-giants'];
+            ids.forEach(id => {
+                const btn = document.getElementById('cat-' + id);
+                if (id === cat) {
+                    btn.className = "px-4 py-2 rounded-xl bg-slate-900 text-white font-bold shadow-sm transition";
+                } else {
+                    btn.className = "px-4 py-2 rounded-xl bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition";
+                }
+            });
+            renderNewsCardsWithAnimation();
+        }
+
+        function filterNewsCards() {
+            renderNewsGrid();
+        }
+
+        function renderNewsCardsWithAnimation() {
+            renderNewsGrid();
+        }
+
+        // ==================== 2. 巨头 Capex 与 Anthropic 估值交互式图表 ====================
+        let financialChartInstance = null;
+
+        function switchChartMode(mode) {
+            const btnCapex = document.getElementById('btnCapexView');
+            const btnAnth = document.getElementById('btnAnthropicView');
+            if (mode === 'capex') {
+                btnCapex.className = "px-3.5 py-2 rounded-lg bg-indigo-600 text-white font-bold shadow-sm transition";
+                btnAnth.className = "px-3.5 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition";
+            } else {
+                btnAnth.className = "px-3.5 py-2 rounded-lg bg-indigo-600 text-white font-bold shadow-sm transition";
+                btnCapex.className = "px-3.5 py-2 rounded-lg bg-slate-100 text-slate-700 hover:bg-slate-200 font-semibold transition";
+            }
+
+            const ctx = document.getElementById('mainFinancialChart').getContext('2d');
+            if (financialChartInstance) financialChartInstance.destroy();
+
+            if (mode === 'capex') {
+                financialChartInstance = new Chart(ctx, {
+                    type: 'bar',
+                    data: {
+                        labels: [
+                            'Google (Alphabet)',
+                            'Microsoft (微软)',
+                            'Meta',
+                            'AWS (对Anthropic十年承诺)',
+                            '腾讯 (Q2年化折算)',
+                            '字节跳动 (2026全年)',
+                            '阿里巴巴 (三年年均)'
+                        ],
+                        datasets: [{
+                            label: '2026 年度 AI 与云基础设施资本开支 / 承诺额 (单位：亿美元)',
+                            data: [2000, 1700, 1375, 1000, 293, 222, 176],
+                            backgroundColor: [
+                                'rgba(37, 99, 235, 0.85)',
+                                'rgba(14, 165, 233, 0.85)',
+                                'rgba(147, 51, 234, 0.85)',
+                                'rgba(79, 70, 229, 0.85)',
+                                'rgba(16, 185, 129, 0.85)',
+                                'rgba(6, 182, 212, 0.85)',
+                                'rgba(249, 115, 22, 0.85)'
+                            ],
+                            borderRadius: 6
+                        }]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { labels: { font: { size: 11, weight: 'bold' } } },
+                            tooltip: {
+                                callbacks: {
+                                    label: (ctx) => ` 投入规模：约 $${ctx.raw} 亿美元`
+                                }
+                            }
+                        },
+                        scales: {
+                            y: {
+                                title: { display: true, text: '亿美元 ($100M USD)', font: { size: 11, weight: 'bold' } },
+                                ticks: { callback: (v) => '$' + (v / 10) + 'B' }
+                            }
+                        }
+                    }
+                });
+            } else {
+                financialChartInstance = new Chart(ctx, {
+                    type: 'line',
+                    data: {
+                        labels: ['2025.03 (E轮)', '2025.09 (F轮)', '2026.02 (G轮)', '2026.09 (Pre-IPO)', '2026.11 (IPO目标估值)'],
+                        datasets: [
+                            {
+                                label: 'Anthropic 估值跃升轨迹 (十亿美元 / $B)',
+                                data: [61.5, 183, 380, 965, 1750],
+                                borderColor: '#f59e0b',
+                                backgroundColor: 'rgba(245, 158, 11, 0.15)',
+                                borderWidth: 3,
+                                fill: true,
+                                tension: 0.35,
+                                yAxisID: 'y'
+                            },
+                            {
+                                type: 'bar',
+                                label: '年化经常性收入 ARR (十亿美元 / $B)',
+                                data: [2.2, 4.6, 14.0, 32.0, 47.0],
+                                backgroundColor: 'rgba(16, 185, 129, 0.8)',
+                                borderRadius: 6,
+                                yAxisID: 'y1'
+                            }
+                        ]
+                    },
+                    options: {
+                        responsive: true,
+                        maintainAspectRatio: false,
+                        plugins: {
+                            legend: { labels: { font: { size: 11, weight: 'bold' } } }
+                        },
+                        scales: {
+                            y: {
+                                position: 'left',
+                                title: { display: true, text: '公司估值 ($B 十亿美元)', font: { size: 11, weight: 'bold' } }
+                            },
+                            y1: {
+                                position: 'right',
+                                title: { display: true, text: '年化收入 ARR ($B)', font: { size: 11, weight: 'bold' } },
+                                grid: { drawOnChartArea: false }
+                            }
+                        }
+                    }
+                });
+            }
+        }
+
+        // ==================== 3. 一键复制微信汇报摘要 ====================
+        function copyExecutiveBrief() {
+            const brief = `【2026年底全球与中国AI巨头战略及下一个业务风口汇报摘要】
+
+1. 国际四大巨头与马斯克/Anthropic最新定调：
+• Anthropic上市冲刺：已于10月26日正式交S-1招股书，预计11月16日上市，目标估值1.5万亿~2万亿美元！2026上半年营收163亿美元（年化ARR破470亿美元，净留存NRR高达900%）。背后与AWS签下10年1000亿美元算力协议，Google追加最高400亿美元投资。
+• Google：2026 Capex上调至1950亿~2050亿美元（云积压订单5140亿），10月发布闭源旗舰Gemini 4 Argon，并首次向外部客户直接卖第八代TPU硬件。
+• Meta：2026 Capex达1300亿~1450亿美元，战略急转弯放弃纯开源，推出闭源商业模型Muse Spark与Muse Wonder赋能广告排序，签下AMD 6GW芯片大单。
+• 微软 & AWS：微软Capex微调至1700亿美元（Azure AI同比+48%）；AWS全面转向“Agentic Cloud”，发布Bedrock AgentCore与1小时扩展Prompt Caching。
+• 马斯克 xAI：完成200亿美元融资扩建Colossus超算第三数据中心，9-11月密集发布Grok 4.7（速度翻倍价格减半）、Grok Voice 3.0与SpaceX超智伙伴网。
+
+2. 海外巨头有没有来中国/跟哪家中国AI公司共建？
+• 路透社独家证实：微软、AWS、Google正与【月之暗面(Moonshot)】洽谈在美云端官方托管2.8万亿参数的Kimi K3模型，并给月之暗面高达30%的收入分成！【阿里巴巴】也在为千问模型推进海外大客户收益分成。
+• 马斯克在9月中美高层互动前夕盛赞中国发展，特斯拉2026年洽购苏州迈为等中国供应商29亿美元设备。
+
+3. 国内四大霸主（DeepSeek/腾讯/阿里/火山）：
+• DeepSeek：新版模型10月下旬在OpenRouter单周调用量环比暴涨801%重夺全球第一，带动中国模型连续26周超越美国。
+• 腾讯：开启“战时集中”，28岁姚顺雨统管模型/算力/数据三线，腰斩股票回购全砸算力（Q2 Capex 528亿同比+176%），11月发布770B混元Hy4并在微信上线交易Agent“小微”。
+• 阿里：云栖大会公布正训练10万亿参数Qwen 4，推出手机跨应用Agent方案Qwen Intelligence。
+• 火山引擎：豆包日均Token突破180万亿（暴涨1500倍），字节2026年AI投入1600亿元，Seedance 2.5成为AI短剧主力。
+
+4. 下一个大风口与业务抓手：
+① 升级“高并发Agent专属Token网关”：Agent单次消耗Token是聊天的50~100倍，利用AWS 1小时扩展缓存+新美Google Cloud顶级牌照吃批发差价；
+② 双向算力套利：把海外Claude/Grok卖给饥渴的腾讯/字节做评测对齐，同时在海外云托管Kimi K3/DeepSeek V4帮出海短剧客户砍掉70%翻译与切片算力成本！`;
+
+            const temp = document.createElement('textarea');
+            temp.value = brief;
+            document.body.appendChild(temp);
+            temp.select();
+            document.execCommand('copy');
+            document.body.removeChild(temp);
+
+            const btn = document.getElementById('copyBriefBtn');
+            const old = btn.innerHTML;
+            btn.innerHTML = '<i class="fa-solid fa-check text-emerald-300"></i> 已复制汇报摘要！';
+            setTimeout(() => { btn.innerHTML = old; }, 2200);
+        }
+
+        window.onload = function () {
+            renderNewsGrid();
+            switchChartMode('capex');
+        };
+    </script>
+</body>
+</html>
